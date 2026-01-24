@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <style>
+      .ccgb{
+        border:2px solid #1e76fe;
+        border-radius: 12px;
+        display: block;
+        min-height: 10px;
+        max-height: 38px;
+        color: #20e0ee;
+        border-radius:12px;
+        margin:0 auto;
+      }
+      .ccgb:hover{
+        color: #92e299;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>CLICK IT:↓</h1>
+      <button class="ccgb" id="clickme">CLICK ME</button>
+      <br>
+      <button class="ccgb" id="scorepay">ScorePay:If your Hunger ≥ 200, click me!!</button>    
+      <h3 id="counter"></h3>
+      <h3 id="hungryCount"></h2>
+    </main>
+    <footer>Copyright(c) 2026 Huberkeep</footer>
+ </body>   
+<script>
+  var tsnoc = 0
+  var hungry = 0
+  clickme.onclick=function sclick(){
+    tsnoc = tsnoc + 1
+    hungry = hungry + 2
+    document.getElementById('counter').textContent = `count:${tsnoc}!`;
+    hungry = hungry + 2;
+    if (hungry == 50){
+      alert("so hungry!The 'hungry' value = 50!");
+    }
+    document.getElementById('hungryCount').textContent = `hungry:${hungry}!`;
+    if (hungry >= 200){
+      alert("hungry >=200,You are die!");
+      
+    }
+    if (tsnoc == 7){
+      alert("7,thid is a lucky number!");
+      fsr = confirm("Are u wanna get food?");
+      if(fsr){
+        hungry = hungry - 37;
+        alert("The 'hungry' value - 37!these foods are great!")
+      }
+    }
+    if (tsnoc == 77){
+      alert("77,double lucky number!")
+     tsr = confirm("Are you wanna get 'super food'?")
+      if(ssr){
+        hungry = hungry - 140;
+        tsnoc = tsnoc + 7
+        alert("very good!")
+      }
+    }
+  }
+    scorepay.onclick = function letusscorepay(){
+    r = confirm("Are you confirm?(after paying:hungry");
+    if(r){
+      tsnoc = tsnoc - 10
+      hungry = hungry - 20
+    }
+    else{
+      alert("OK")
+    }
+  }
+</script>  
+</html>
