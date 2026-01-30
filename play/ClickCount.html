@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ClickCount</title>
+    <meta name="keywords" content="ClickCount">
+    <style>
+      #mainwindow{
+        background-color: #2099f8;
+        height: 210px;
+        width: 0px;
+        border-color: #5fe358;
+        border-radius: 12px;
+      }
+      #hififtyb{
+        border: 2px solid #77ff77;
+        border-radius:9px;
+      }
+    </style>
+   </head>
+   <body>
+     <noscript>
+       <h1 style="color:#ff0000">no script!</h1>
+     </noscript>
+    <button id="hififtyb">TOUCH ME</button>
+    <h1 id="widthDisplayText">width:0</h1>
+     <div id="mainwindow">
+     </div>
+     <span id="countText">Count:00</span>
+     <span id="secondCountText">blockClickCount:00</span>
+   </body>
+   <script>
+     let elemWidth = 0;
+     var clickCount = 0;
+     blockClickCount = 0;
+     mainwindow.onclick = function BlockClick(){
+       ++blockClickCount
+     }
+     hififtyb.onclick = function mainwindowPlusFifty(){
+       ++clickCount;
+       elemWidth += 5;
+       mainwindow.style.width = elemWidth + 'px';
+       hififtyb.style.color = '#34ef3b';
+       widthDisplayText.textContent = `width:${elemWidth}px`;
+       countText.textContent = `count:${clickCount} \n`;
+       secondCountText.textContent = `blockClickCount:${blockClickCount}`;
+     }
+   </script>
+ </html>
