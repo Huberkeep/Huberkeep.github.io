@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <html lang="EN">
+    <style>
+      h1{
+        display: inline;
+      }
+      body{
+        background-color:#eae54b;
+        color: #ffffff;
+        text-align: center;
+        font-family: "Trebuchet MS",sans-serif,Arial;
+      }
+      .choice-item{
+        border-radius: 7px;
+        background-color: #93c0f6;
+        color: #fffaef;
+        text-decoration: none;
+        padding: 2px 7px 7px 7px;
+      }
+      #morewindow{
+        border-radius:9px;
+        background-color: #ffffff99;
+      }
+      #morewindowclosebutton{
+        position: absolute;
+        top: 0;
+        right:0;
+        color:#ff2000;
+        border:none;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Not Found<br>(Status Code:404)</h1>
+    <h3>What happened?</h3>
+    <span>Page doesn't exist,please centerheck if the content of your search is correct.</span>
+    <h3>What can I do?</h3>
+    <span>Please check content of search is correct and try again.</span>
+    <h3>Nav</h3>
+    <a href="./index.html" class="choice-item">Back homepage</a>
+    <a href="#more" class="choice-item" id="morebutton">More</a>
+    <dialog id="morewindow">
+      <button id="morewindowclosebutton">×</button>
+      <h1>404:Not Found</h1>
+      <br>
+      <span>Not found page(Status Code:404).Please try again.</span>
+      <span>And if you can't find the reason,please back.</span>
+    </dialog>
+  </body>
+ <script>
+   morebutton.onclick = function more(){
+     morewindow.show()
+   }
+   morewindowclosebutton.onclick= function moreclose(){
+     morewindow.close()
+     alert("Successfully Closed Window")
+    } 
+ </script> 
+</html>
