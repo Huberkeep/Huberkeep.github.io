@@ -1,111 +1,121 @@
+<!DOCTYPE html>
 <html>
+<html lang=EN>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <meta name="keywords" content="Huberkeep's Web">
-    <title>Hello!Welcome to Huberkeep's Web!</title>
-    <style>
-      #WELCOME{
-        border-radius: 7px;
-        padding: 17px;
-        background-color:#c5f79f;
-        background-position:right;
-        color:#026a95;
-        font-weight: 290;
-        text-shadow: 5px 2px 4px #8f9bf696;
-        max-height: 50px;
-        min-height: 20px;
-        max-width: 320;
-        overflow:auto;
-        clear: both;
-     }
-     .gridcont{
-       display: grid;
-       grid-auto-rows: auto;
-      gap: 10px;
-     }
-     .hotit{
-       color: #4A659f;
-     }
-     .showcard{
-       display: block;
-       border-radius: 6px ;
-       min-height:50px ;
-       max-height:85px;
-     }
-     .wlbtn{
-       border: 3px solid #2380f3;
-       border-radius: 10px 30px
-     }
-     .navitem{
-       display: inline-block;
-       text-decoration: none;
-       background-color: #f5e213;
-       color: #7777be;
-       padding: 0.7px 7px 0.7px;
-       border-radius: 20px;
-     }
-     .article-blog{
-      display: inline-flex;
-      background-color:#e1f2a5;
-      border-radius: 8px;
-     }
-     body{
-       font: 21px/1.6 "Quicksand", sans-serif;
-     }
-    </style>
-  </head>
+  <meta charset=UTF-8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>Hello</title>
+  <style>
+    *:focus{
+      outline:2px dashed #69f;
+      color:#ff0000;
+    }
+    textarea{
+      display:inline;
+      background-color:#ffffff;
+      border-color:#34e1ef;
+      border-radius:12px;
+      line-height:12px;
+    }
+    button{
+      border-radius:7px;
+      border:2px solid #90fcb2;
+      }
+    h1,h2{
+      text-decoration:underline #b4f368;
+      letter-spacing:normal;
+      color:#60a5f9;
+    }  
+    h3,h6{
+      text-decoration:underline #9c76f5 2.7px;
+      color:#74e5fb;
+    }
+    a{
+      display:inline-block;
+      text-decoration:none;
+      background-color:#e5ea81;
+      color:#af96cd;
+      border-radius:8px;
+      padding:7px 7px 7px 3px;
+    }
+    .cards-con{
+      display:inline-block;
+      overflow:auto;
+      background-color:hsl(177.3,91.7%,68.5%);
+      border-radius:12px;
+    }
+    .cards{
+      display:inline-block;
+      margin:7px 7px 7px 8px;
+      border-radius:16px;
+      overflow:auto;
+      background-color:rgb(184,244,247);
+      white-space:pre;
+      font-family:Consolas,Monaco;
+    }
+    span{
+      color:rgba(184,236,183,0.9);
+      font-family:"Times New Roman",Sans-Serif;
+    }
+    hr{
+      border-top:2px solid #000000!important;
+    }
+  </style>
+</head>
   <body>
-    <main id="mainhead">
-      <header>
-        <h1 id="WELCOME">#WELCOME!</h1>
-      </header>
-      <button class="wlbtn" onclick="location.href = 'index.html'">Reload</button>
-      <button class="wlbtn" onclick="navwin.show()">nav</button>
-      <dialog id="navwin" class="windowcard">
-        <nav> <!--"Main navigation bar"-->
-          <a href="./play/touchme.html" class="navitem">Play:TOUCHME</a>
-        </nav>
-        <button class="wlbtn" onclick="navwin.close()">CLOSE</button>
-      </dialog>  
-      <button class="wlbtn" onclick="location.href = './index.html'">Index.html</button>
-      <article>
-        <blog>
-          <content>
-            <div class="article-blog">
-              <p>“Not Found.
-              ” — 404 Not Found
-              </p>
-            </div>  
-            <br>
-            <br>
-            <div class="article-blog">
-              <p>“1+1=2” — calculator</p>
-            </div>
-            <br>
-            <br>
-            <div class="article-blog">
-              <p onclick="egg()">“EGG!” — UNKNOW</p>
-             </div> 
-          </content>
-        </blog>
-      </article>
-    </main>  
-    <footer>
-      <p style="text-align:center;">Copyright(c) 2026 Huberkeep</p>
-    </footer>  
-  </body> 
- <script>
-   function egg(){
-    let r = confirm("Are you confirm fill some unknow things?")
-    if (r) {
-      const eggs = Array(700).fill("egg");
-      alert(eggs.join(", Eggs are good!\n"));
+    <h1>Hello!</h1>
+    <h3 id="today">Today</h3>
+    <h6 id="TodayCards">TodayCards</h6>
+    <div class="cards-con" id="todayCardBlock">
+      <div id="todayCardOne" class="cards">
+        1+1=2
+                  ———calculator
+      </div>
+      <div id="todayCardTwo" class="cards">
+        > 0.1 + 0.2 === 0.3
+        false
+               ———Console
+      </div>
+    </div>
+    <dialog id="tdia">
+      <h3>Now</h3>
+      <span id="todayTimeText">Now is:Loading</span>
+      <hr>
+      <button onclick="tdia.close()">CLOSE</button>
+    </dialog>
+    <h6>Do not Copy</h6>
+    <p id="doNotCopyThisText">Do not copy this text!</p>
+    <button id="openButton">OPEN:T??E</button>
+    <h3>Nav</h3>
+    <nav>
+      <h6>this.page</h6>
+        <a href="#today">today</a>
+        <a href="#todayCards">TodayCards</a>
+    </nav>
+  </body>
+<script>
+  const time = new Date();
+  const doNotCopyThisText = document.getElementById("doNotCopyThisText");
+  const calculatorElem = document.getElementById("todayCardOne");
+  var copyCount = 0;
+  openButton.onclick = function tdiaShow(){
+    tdia.show();
+    todayTimeText.textContent = `${time}`;
+  }
+  calculatorElem.onclick = function calculatorEasterEgg(){
+    alert("CALCULATOR:1+1 = 2:TRUE");
+  }
+  doNotCopyThisText.addEventListener('copy',function doNotCopyThisAndIAutoAugry(event){
+    alert("🧐😡🤬")
+    for (let g = 0;g < 2;g++){
+      alert("🥺Don't Copy Again")
     }
-    else {
-      return 0;
+    if (copyCount == 2){
+      alert("Can you stop?🙁")
     }
-   }
- </script> 
+    if (copyCount == 5){
+      alert("Can you stop now?Please!")
+    }
+  });
+</script>
 </html>
