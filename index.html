@@ -1,121 +1,52 @@
 <!DOCTYPE html>
 <html>
-<html lang=EN>
-  <head>
-  <meta charset=UTF-8>
-  <meta name=viewport content="width=device-width,initial-scale=1">
-  <title>Hello</title>
-  <style>
-    *:focus{
-      outline:2px dashed #69f;
-      color:#ff0000;
-    }
-    textarea{
-      display:inline;
-      background-color:#ffffff;
-      border-color:#34e1ef;
-      border-radius:12px;
-      line-height:12px;
-    }
-    button{
-      border-radius:7px;
-      border:2px solid #90fcb2;
-      }
-    h1,h2{
-      text-decoration:underline #b4f368;
-      letter-spacing:normal;
-      color:#60a5f9;
-    }  
-    h3,h6{
-      text-decoration:underline #9c76f5 2.7px;
-      color:#74e5fb;
-    }
-    a{
-      display:inline-block;
-      text-decoration:none;
-      background-color:#e5ea81;
-      color:#af96cd;
-      border-radius:8px;
-      padding:7px 7px 7px 3px;
-    }
-    .cards-con{
-      display:inline-block;
-      overflow:auto;
-      background-color:hsl(177.3,91.7%,68.5%);
-      border-radius:12px;
-    }
-    .cards{
-      display:inline-block;
-      margin:7px 7px 7px 8px;
-      border-radius:16px;
-      overflow:auto;
-      background-color:rgb(184,244,247);
-      white-space:pre;
-      font-family:Consolas,Monaco;
-    }
-    span{
-      color:rgba(184,236,183,0.9);
-      font-family:"Times New Roman",Sans-Serif;
-    }
-    hr{
-      border-top:2px solid #000000!important;
-    }
-  </style>
-</head>
-  <body>
-    <h1>Hello!</h1>
-    <h3 id="today">Today</h3>
-    <h6 id="TodayCards">TodayCards</h6>
-    <div class="cards-con" id="todayCardBlock">
-      <div id="todayCardOne" class="cards">
-        1+1=2
-                  ———calculator
-      </div>
-      <div id="todayCardTwo" class="cards">
-        > 0.1 + 0.2 === 0.3
-        false
-               ———Console
-      </div>
-    </div>
-    <dialog id="tdia">
-      <h3>Now</h3>
-      <span id="todayTimeText">Now is:Loading</span>
-      <hr>
-      <button onclick="tdia.close()">CLOSE</button>
-    </dialog>
-    <h6>Do not Copy</h6>
-    <p id="doNotCopyThisText">Do not copy this text!</p>
-    <button id="openButton">OPEN:T??E</button>
-    <h3>Nav</h3>
-    <nav>
-      <h6>this.page</h6>
-        <a href="#today">today</a>
-        <a href="#todayCards">TodayCards</a>
-    </nav>
-  </body>
+<html lang="EN">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <style>
+      h1,h2{text-decoration:underline 3px hsla(143.7,80.1%,67.9%,0.725);color:#95cfea;}
+      body{font-family:sans-serif;font-weight:900;text-align:center;}
+      h5{color:#8bc6ef;}
+      .topbutton{border-radius:12px 8px 8px 8px;border:2px solid #ffffff1c;}
+      .topbutton:active,.topbutton:hover{background-color:#f3dc36;color:#ffffff;}
+      #eeicon{color:#a1a1a1;}
+      #eeicon:active,#eeicon:hover{color:#000000;text-shadow:2px 2px 2px #77777777;}
+      #eastereggdialog{border-radius:12px;}
+      #doNotSelectThisText::selection{background-color:#ffff00;color:#ffffff}
+    </style>
+</head>    
+<body>
+  <span id="eeicon">😎</span>
+  <dialog id="eastereggdialog">
+    <button class="topbutton" onclick="eastereggdialog.close()" style="position:absolute;right:0;">close</button><br>
+    <p>😎🤪</p>
+  </dialog>
+  <h1>Hello</h1>
+  <h2>Today</h2>
+  <marquee onclick="this.stop()" ondblclick="this.start()" scrollamount="17" direction="left"><pre><span id="dateText">DATE</span></pre></marquee>
+  <h2>Play</h2>
+  <marquee id="coolMarquee" direction="up">
+    😎TOUCH THE TEXT
+  </marquee>
+  <h6 id="clickMe">CLICK ME,COUNT:0000000000(null)</h6>
+</body>
 <script>
-  const time = new Date();
-  const doNotCopyThisText = document.getElementById("doNotCopyThisText");
-  const calculatorElem = document.getElementById("todayCardOne");
-  var copyCount = 0;
-  openButton.onclick = function tdiaShow(){
-    tdia.show();
-    todayTimeText.textContent = `${time}`;
+  var clickf = 256-255/1-1
+  var nowDate = new Date().toString().split(' ').slice(0,4).join(' ');
+  var coolIcon = "😎"
+  var nocoolHappyIcon = "🤪"
+  
+  dateText.textContent = `${nowDate}`
+  eeicon.addEventListener('click',function menudialogopen(){
+    eastereggdialog.show()
+  })
+  clickMe.onclick = function(){
+    clickf += 1
+    let coolNum = coolIcon.repeat(clickf)
+    coolMarquee.textContent = `${coolNum}`
+    clickMe.textContent = `Click Me!(Count:${clickf})`
   }
-  calculatorElem.onclick = function calculatorEasterEgg(){
-    alert("CALCULATOR:1+1 = 2:TRUE");
-  }
-  doNotCopyThisText.addEventListener('copy',function doNotCopyThisAndIAutoAugry(event){
-    alert("🧐😡🤬")
-    for (let g = 0;g < 2;g++){
-      alert("🥺Don't Copy Again")
-    }
-    if (copyCount == 2){
-      alert("Can you stop?🙁")
-    }
-    if (copyCount == 5){
-      alert("Can you stop now?Please!")
-    }
-  });
+  
 </script>
 </html>
