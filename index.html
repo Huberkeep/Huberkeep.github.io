@@ -5,48 +5,67 @@
     <meta charset="UTF-8">
     <title>Hello!</title>
     <style>
-      h1,h2{text-decoration:underline 3px hsla(143.7,80.1%,67.9%,0.725);color:#95cfea;}
-      body{font-family:sans-serif;font-weight:900;text-align:center;}
+      #main-title{
+        margin: 0;
+        padding: 0;
+        font-size:64px;
+        color:#c0e0fbb7;
+      }
+      h2{
+        text-decoration:underline 3px hsla(143.7,80.1%,67.9%,0.725);
+        color:#95cfea;
+      }
+      body{
+        font-family:sans-serif;
+        font-weight:900;
+        text-align:center;
+        webkit-box-align:center;
+      }
       h5{color:#8bc6ef;}
-      .topbutton{border-radius:12px 8px 8px 8px;border:2px solid #ffffff1c;}
-      .topbutton:active,.topbutton:hover{background-color:#f3dc36;color:#ffffff;}
-      #eeicon{color:#a1a1a1;}
-      #eeicon:active,#eeicon:hover{color:#000000;text-shadow:2px 2px 2px #77777777;}
+      .topbutton{
+        border-radius:12px 8px 8px 8px;
+        border:2px solid #ffffff1c;
+      }
+      .topbutton:active,.topbutton:hover{
+        background-color:#f3dc36;
+        color:#ffffff;
+      }
+      #eeicon{
+        color:#a1a1a1;
+        
+      }
+      #eeicon:active,#eeicon:hover{
+        color:#000000;
+        text-shadow:2px 2px 2px #77777777;}
       #eastereggdialog{border-radius:12px;}
-      #doNotSelectThisText::selection{background-color:#ffff00;color:#ffffff}
+      #doNotSelectThisText::selection{background-color:#ffff00;
+      color:#ffffff;
+      }
     </style>
 </head>    
 <body>
   <span id="eeicon">😎</span>
   <dialog id="eastereggdialog">
     <button class="topbutton" onclick="eastereggdialog.close()" style="position:absolute;right:0;">close</button><br>
-    <p>😎🤪</p>
+    <h2>#😎</h2>
+
   </dialog>
-  <h1>Hello</h1>
+  <h1 id="main-title">Hello</h1>
   <h2>Today</h2>
+  <h3>Date</h3>
   <marquee onclick="this.stop()" ondblclick="this.start()" scrollamount="17" direction="left"><pre><span id="dateText">DATE</span></pre></marquee>
-  <h2>Play</h2>
-  <marquee id="coolMarquee" direction="up">
-    😎TOUCH THE TEXT
-  </marquee>
-  <h6 id="clickMe">CLICK ME,COUNT:0000000000(null)</h6>
+
+  <footer>
+    <p>
+      Copyright(c) 2026 Huberkeep
+    </p>  
+  </footer>
 </body>
 <script>
-  var clickf = 256-255/1-1
   var nowDate = new Date().toString().split(' ').slice(0,4).join(' ');
-  var coolIcon = "😎"
-  var nocoolHappyIcon = "🤪"
-  
   dateText.textContent = `${nowDate}`
   eeicon.addEventListener('click',function menudialogopen(){
     eastereggdialog.show()
   })
-  clickMe.onclick = function(){
-    clickf += 1
-    let coolNum = coolIcon.repeat(clickf)
-    coolMarquee.textContent = `${coolNum}`
-    clickMe.textContent = `Click Me!(Count:${clickf})`
-  }
-  
 </script>
 </html>
