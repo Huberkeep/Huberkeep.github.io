@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <title>Hello!</title>
     <style>
-      #main-title{
+      hr{
+        border-color:#000000;
+      }
+      #maintitle{
+        text-align:left;
         margin: 0;
-        padding: 0;
+        padding-top:128px;
         font-size:64px;
         color:#c0e0fbb7;
+      }
+      #maintitleudtext{
+        margin:0;
+        text-align:left;
+        text-decoration:none;
+        color:#5f5f5f68;
       }
       h2{
         text-decoration:underline 3px hsla(143.7,80.1%,67.9%,0.725);
@@ -18,43 +28,30 @@
       body{
         font-family:sans-serif;
         font-weight:900;
-        text-align:center;
         webkit-box-align:center;
       }
       h5{color:#8bc6ef;}
-      .topbutton{
-        border-radius:12px 8px 8px 8px;
-        border:2px solid #ffffff1c;
-      }
-      .topbutton:active,.topbutton:hover{
-        background-color:#f3dc36;
-        color:#ffffff;
-      }
-      #eeicon{
-        color:#a1a1a1;
-        
-      }
-      #eeicon:active,#eeicon:hover{
-        color:#000000;
-        text-shadow:2px 2px 2px #77777777;}
-      #eastereggdialog{border-radius:12px;}
-      #doNotSelectThisText::selection{background-color:#ffff00;
-      color:#ffffff;
+      #clickplayarea{
+        background-color:#b0ff1a68;
+        border-radius:16px;
       }
     </style>
 </head>    
 <body>
-  <span id="eeicon">😎</span>
-  <dialog id="eastereggdialog">
-    <button class="topbutton" onclick="eastereggdialog.close()" style="position:absolute;right:0;">close</button><br>
-    <h2>#😎</h2>
-
+  <h1 id="maintitle">Hello.</h1>
+  <h2 id="maintitleudtext">Hello.</h2>
   </dialog>
-  <h1 id="main-title">Hello</h1>
   <h2>Today</h2>
   <h3>Date</h3>
   <marquee onclick="this.stop()" ondblclick="this.start()" scrollamount="17" direction="left"><pre><span id="dateText">DATE</span></pre></marquee>
-
+  <h2>Play</h2>
+  <div id="clickplayarea">
+    <p id="clickme">Click Me!</p>
+    <p id="countofclick">SCORE:>\&lt</p>
+  </div>  
+  <br>
+  <br>
+  </div>
   <footer>
     <p>
       Copyright(c) 2026 Huberkeep
@@ -63,9 +60,14 @@
 </body>
 <script>
   var nowDate = new Date().toString().split(' ').slice(0,4).join(' ');
+  var click = 0
+  clickme.onclick = function onclicktoplus(){
+    click += 1;
+    countofclick.textContent = `SCORE:${click}`
+  }
   dateText.textContent = `${nowDate}`
-  eeicon.addEventListener('click',function menudialogopen(){
-    eastereggdialog.show()
+  menuicon.addEventListener('click',function menudialogopen(){
+    menudialog.show()
   })
 </script>
 </html>
